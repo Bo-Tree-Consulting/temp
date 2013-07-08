@@ -1,0 +1,34 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int m,n,flag=0,i,temp,c;
+clrscr();
+
+printf("\n\tenter the m");
+scanf("%d",&m);
+for(i=1;i<=m;i++)
+{
+printf("%d",i);
+}
+printf("\n\t enter the n");
+scanf("%d",&n);
+if(n>=m)
+{
+printf("n should be less than m");
+return;
+}
+for(i=1;i<=m;i++)
+{
+flag=m;
+if(i==n)
+{
+if(flag!=1)
+{
+m--;
+}
+}
+}
+printf("%d is win",m);
+getch();
+}
