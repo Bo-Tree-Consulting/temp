@@ -1,0 +1,103 @@
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+#define MAX 10
+#define MAXX 100
+int stack[MAX];
+int top=-1;
+int stack1[MAXX];
+int top1=-1;
+int i=0;
+  void push(int);
+	void push1(int,int);
+	void pop();
+	void main()
+		{
+			int j,ch,prev;
+			clrscr();
+			do
+		{
+			printf("\nenter 1 the to push element");
+			printf("\nenter 2 to pop the element");
+			printf("\nente 3 to exit");
+			printf("\nenter your choice");
+			scanf("%d",&ch);
+			switch(ch)
+		{
+	case 1:
+		{
+
+			push(i);
+			i++;
+			break;
+		}
+	case 2:
+		{
+			pop();
+			break;
+		}
+	case 3:
+			exit(0);
+	default:
+			printf("\nplease enter valid choice");
+		}
+	}
+			while(1);
+		}
+			void push(int i)
+	{
+
+		     while(i<10)
+		     {
+
+			if(top==MAX-1)
+		{
+			printf("stack is full\n");
+		}
+
+			 top++;
+			stack[top]=i;
+			printf("\nitem is pushed %d",i);
+
+		      break;
+		      }
+
+		 }
+
+
+
+			void push1(int prev,int temp)
+	{
+			  int j,t2;
+			top1++;
+			t2=prev-stack1[top1];
+		       stack1[top1]=prev;
+			printf("\nitem %d",prev);
+			if(top1==MAXX-1)
+		{
+			printf("\nStack is full");
+			}
+			if(temp!=0 && temp!=1 && temp!=-1 && t2!=1 && t2!=-1 && t2!=0)
+			{
+			printf("\nstring is invalid");
+			}
+
+		}
+			void pop()
+	{
+			int i,temp,t1,prev;
+			if(top==-1)
+		{
+			printf("\nstack is empty");
+			return;
+		}
+			i=stack[top];
+			prev=i;
+			printf("\nitem poped=%d",i);
+			t1=stack[top-1];
+			top--;
+			temp=i-t1;
+			push1(prev,temp);
+
+	}
+
