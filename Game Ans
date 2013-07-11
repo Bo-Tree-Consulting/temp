@@ -2,33 +2,57 @@
 #include<conio.h>
 void main()
 {
-int m,n,flag=0,i,temp,c;
+int i,m,j,w=0,n,flag;
 clrscr();
+printf("\nenter the value of m\n");
 
-printf("\n\tenter the m");
-scanf("%d",&m);
 for(i=1;i<=m;i++)
 {
-printf("%d",i);
+scanf("%d",&i);
 }
-printf("\n\t enter the n");
+printf("\nenter the value of n");
 scanf("%d",&n);
 if(n>=m)
 {
-printf("n should be less than m");
-return;
+printf("\n n should be less than m");
 }
-for(i=1;i<=m;i++)
-{
 flag=m;
+ i=1;
+ j=1;
+ w=0;
+while(flag!=1)
+{
+if(j>m)
+{
+
+
+j=1;
+
+}
+
 if(i==n)
 {
-if(flag!=1)
-{
+    
+i=1;
+flag--;
 m--;
+j++;
+     
+
+
+    }
+else
+{
+
+w=j;
+i++;
+j++;
 }
+
 }
-}
-printf("%d is win",m);
+
+
+ printf("\n%d is win",w);
+
 getch();
 }
