@@ -1,58 +1,55 @@
 #include<stdio.h>
 #include<conio.h>
+#define M 6
+#define N 4
 void main()
 {
-int i,m,j,w=0,n,flag;
-clrscr();
-printf("\nenter the value of m\n");
+int j,r[M],k,rk,counter,w;
+ clrscr();
+rk = M;
+k = 0;
+w = 0;
+j=0;
+counter = 1;
 
-for(i=1;i<=m;i++)
+while(j<M)
 {
-scanf("%d",&i);
-}
-printf("\nenter the value of n");
-scanf("%d",&n);
-if(n>=m)
-{
-printf("\n n should be less than m");
-}
-flag=m;
- i=1;
- j=1;
- w=0;
-while(flag!=1)
-{
-if(j>m)
-{
-
-
-j=1;
+        r[j]=j;
+        j++;
 
 }
 
-if(i==n)
+while(rk!=1)
 {
-    
-i=1;
-flag--;
-m--;
-j++;
-     
+        if(k>=M)
+        {
+                k=0;
+        }
+        if (r[k]!=-1)
+        {
+                if(counter==N)
+                {
+                        r[k]=-1;
+                        printf("%d \t",k);
+                        counter=1;
+                        rk--;
+                        k++;
+                }
+                else
+                {
+                        w=k;
+                        counter++;
+                        k++;
 
+                }
 
-    }
-else
-{
+        }
+        else
+        {
+                k++;
+        }
 
-w=j;
-i++;
-j++;
 }
-
-}
-
-
- printf("\n%d is win",w);
-
+printf("winner is %d",(w+1));
 getch();
 }
